@@ -15,41 +15,29 @@ void function3() {
 }
 void function4() {
     String numbers [] = {1, 2, 3, 4, 5, 6, 7, 8};
-    
+    for (int i = 0; i < 8; i++) {
+      Serial.println(numbers[i]);
+    }
+}
+void printFibo(int n) {
+  int prev = 0; 
+  int cur = 1; 
+  int fibo = 0;
+  int container [] = {0, 1, 0};
+  for (int i = 0; i < n; i++) {
+    fibo = cur + prev;
+    println(fibo);
+    prev = cur; 
+    cur = fibo; 
+  }
 }
 void setup() {
   Serial.begin(9600);
   function1(); 
   function2a(120,512);
   function3();
-  Serial.println(numbers[0]);
-  Serial.println(numbers[1]);
-  Serial.println(numbers[2]);
-  Serial.println(numbers[3]);
-  Serial.println(numbers[4]);
-  Serial.println(numbers[5]);
-  Serial.println(numbers[6]);
-  Serial.println(numbers[7]);
-  Serial.println(numbers[7]);
-  Serial.println(numbers[6]);
-  Serial.println(numbers[5]);
-  Serial.println(numbers[4]);
-  Serial.println(numbers[3]);
-  Serial.println(numbers[2]);
-  Serial.println(numbers[1]);
-  Serial.println(numbers[0]);
-  Serial.println(numbers[1]);
-  Serial.println(numbers[2]);
-  Serial.println(numbers[3]);
-  Serial.println(numbers[4]);
-  Serial.println(numbers[5]);
-  Serial.println(numbers[6]);
-  Serial.println(numbers[6]);
-  Serial.println(numbers[5]);
-  Serial.println(numbers[4]);
-  Serial.println(numbers[3]);
-  Serial.println(numbers[2]);
-  Serial.println(numbers[1]);
+  function4();
+  printFibo(10);
 }
 void loop() {
   
